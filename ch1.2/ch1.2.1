@@ -1,0 +1,24 @@
+
+0attach(beer)
+beerTS<-ts(x, start=c(1991, 1), end=c(1995, 8), frequency=12)
+beerTS
+
+beer95<-window(beerTS, start=c(1995 , 1))
+beer95
+
+beerTrain<-window (beerTS, start=c(1992,2), end=c(1994,8), frequency=12)
+beerTrain
+
+beerTest<-window (beerTS, start=c(1994,9), end=c(1995,8), frequency=12)
+beerTest
+
+
+attach(ausbeer)
+beerTS2<-ts(x1, start=c(1956, 1), end=c(2010, 2), frequency=12)
+beerTS2
+beer2<-window(beerTS2, start=c(1992,1), frequency=12)
+beer2
+
+
+library(fma)
+ggAcf(beer2 ,plot=FALSE)

@@ -1,0 +1,11 @@
+attach(milk)
+milkTS<-ts(vol, start=c(2007,1), end=c(2020,12), frequency=12)
+milkTS
+
+dframe <- cbind(Monthly = milkTS,ddays=monthdays(milkTS), DailyAverage = milkTS/monthdays(milkTS))
+dframe
+
+
+dframel <- cbind(Monthly = milkTS, DailyAverage = milkTS/monthdays(milkTS))
+library(fma)
+autoplot(dframel, facetT=RUE, xlab="Years",ylab="Pounds", main="Milk production per cow")
